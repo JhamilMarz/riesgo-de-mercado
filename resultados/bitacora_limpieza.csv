@@ -1,0 +1,12 @@
+Variable o registro afectado,Problema detectado,Acción realizada,Justificación técnica,N antes,N después
+NASDAQCOM.valor,331 faltantes (celda vacía; FRED usa '.' en feriados sin cierre),No se imputan; esas fechas no entran al cálculo de retornos,Rellenar crearía retornos de 0 % falsos y subestimaría la volatilidad,9608,9277
+VIXCLS.valor,302 faltantes (feriados),No se imputan; el VIX queda vacío en esos días,Imputar inventaría información de volatilidad,9609,9307
+NASDAQCOM / VIXCLS (cruce),4 días con NASDAQ sin VIX y 34 con VIX sin NASDAQ,Los días con VIX sin NASDAQ no producen retorno. Los días con NASDAQ sin VIX conservan el retorno y se excluyen solo de los análisis con VIX,Se pierde la mínima información posible sin inventar datos,9277,9272
+Fechas de VIXCLS ausentes en NASDAQCOM,1 fecha(s): 2026-09-07,Sin acción: la fecha no tiene cierre del NASDAQ,Sin precio no hay retorno,0,0
+ret (días tras feriado),238 retornos abarcan más de un día hábil,Se conservan y se marcan en `cruza_feriado`,Son retornos legítimos entre dos cierres consecutivos,238,238
+Todas las series,0 fechas duplicadas,Ninguna,No hay registros repetidos,0,0
+USREC.valor,Solo toma 0 y 1; no hay faltantes. El archivo no marca los meses recientes sin clasificar,Se tratan como expansión (D13) y se repite el análisis con la muestra al 31-dic-2024,El NBER fecha con retraso; el archivo no permite distinguirlos,442,442
+USREC (frecuencia mensual),La serie es mensual y los retornos son diarios,Cada día toma el estado de su mes calendario,Convención del NBER: la recesión se define por meses,442,9276
+ret (atípicos),99 retornos con z robusto > 5,Se conservan,"Son crisis reales, objeto del estudio; no son errores de captura",9276,9276
+Primer día,Sin retorno (no hay cierre previo),Se descarta,Un retorno necesita dos precios,9277,9276
+Tipos,fecha como texto,Convertida a datetime; valor es float; USREC a entero,Operaciones por fecha y por mes,-,-

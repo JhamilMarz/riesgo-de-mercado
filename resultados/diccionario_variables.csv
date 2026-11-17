@@ -1,0 +1,14 @@
+Variable,Definición,Tipo,Escala,Categorías / unidades,Función
+"fecha (NASDAQCOM, VIXCLS)",Fecha de la observación (día de negociación),Fecha,Intervalo (calendario),AAAA-MM-DD,Identificador
+fecha (USREC),Primer día del mes al que se refiere el indicador,Fecha,Intervalo (calendario),AAAA-MM-01,Identificador
+valor (NASDAQCOM),Nivel de cierre del índice NASDAQ Composite (base 100 el 5-feb-1971),Cuantitativa continua,Razón,Puntos del índice,Insumo de los retornos
+valor (VIXCLS),Índice de volatilidad VIX (volatilidad implícita a 30 días de opciones sobre el S&P 500),Cuantitativa continua,Razón,Puntos porcentuales anualizados,Explicativa
+valor (USREC),Indicador NBER de recesión: 1 desde el mes siguiente al pico hasta el mes del valle,Binaria (nominal),Nominal,"0 = expansión, 1 = recesión",Agrupación
+ret (derivada),Retorno logarítmico diario = 100 x ln(P_t / P_t-1),Cuantitativa continua,Intervalo,% diario,Resultado
+abs_ret (derivada),Magnitud del retorno = |ret|,Cuantitativa continua,Razón,% diario,Resultado (medida de riesgo)
+dia_baja (derivada),"1 si ret < 0, 0 en otro caso",Binaria (nominal),Nominal,"0 = no, 1 = sí",Resultado
+rec (derivada),"Estado del ciclo del mes del día, tomado de USREC",Binaria (nominal),Nominal,"0 = expansión, 1 = recesión",Agrupación
+vix_lag (derivada),VIX del día de negociación anterior,Cuantitativa continua,Razón,Puntos porcentuales,Explicativa
+dvix (derivada),Cambio del VIX respecto al día anterior = VIX_t - VIX_t-1,Cuantitativa continua,Intervalo,Puntos,Explicativa
+regimen_vix (derivada),"Tercil del VIX del día anterior (bajo, medio, alto)",Ordinal,Ordinal,bajo < medio < alto,Agrupación
+"logvol (derivada, mensual)",Logaritmo de la desviación estándar de los retornos diarios del mes,Cuantitativa continua,Intervalo,ln(% diario),Resultado de C1

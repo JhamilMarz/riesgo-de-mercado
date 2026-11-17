@@ -1,0 +1,8 @@
+Análisis,Tipo,Estadístico,Valor p,Tamaño del efecto,Valor
+Spearman |ret| ~ VIX(t-1),Bivariado,rho = 0.385,< 0.001,rho (monótona),0.385
+Chi-cuadrado régimen VIX x día de baja,Bivariado,chi2 = 1.9,0.378,V de Cramér,0.014
+Regresión ret ~ dVIX (Newey-West),Bivariado / paramétrica,t = -30.7,< 0.001,R2,0.491
+"t de Welch, log-volatilidad mensual",Paramétrica,t = 6.99,< 0.001,d de Cohen,1.265
+Control Newey-West (recesión),Paramétrica,b = 0.604,< 0.001,diferencia de log-vol.,0.604
+"Mann-Whitney, log-volatilidad mensual",No paramétrica,U = 11880,< 0.001,CLES (prob. superioridad),0.813
+Razón de volatilidades diarias,Magnitud (C2),"IC [1.46, 2.18]",,razón,1.824

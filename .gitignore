@@ -1,0 +1,14 @@
+.ipynb_checkpoints/
+__pycache__/
+.DS_Store
+# material privado de trabajo y estudio
+estado_proyecto.md
+decisiones.md
+pendientes.md
+defensaProyecto.md
+macroTeorico.md
+marcoReferencial.md
+contextoEconomia.md
+contextoEstadistica.md
+textos_para_pegar.md
+src_nb/
